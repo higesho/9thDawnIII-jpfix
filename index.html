@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>9th Dawn III 非公式日本語化パッチ</title>
+<meta name="description" content="Steam 版 9th Dawn III のメニュー・アイテム・スキル・会話などを日本語で表示する非公式パッチ。ファイルを置くだけで導入できます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #12141a;
+    --panel: #1c1f27;
+    --line: #333845;
+    --text: #e3e5ea;
+    --muted: #9ea3b0;
+    --accent: #e0a85a;
+    --accent-dark: #6b4a1e;
+    --warn: #e0a85a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Noto Serif JP", "Yu Mincho", serif;
+    line-height: 1.85;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+  header {
+    border-bottom: 1px solid var(--line);
+    background: linear-gradient(180deg, #252a36 0%, var(--bg) 100%);
+    padding: 56px 0 40px;
+    text-align: center;
+  }
+  header .sub { color: var(--muted); letter-spacing: .2em; font-size: .85rem; margin: 0; }
+  h1 { font-size: clamp(1.6rem, 4.5vw, 2.4rem); margin: .3em 0 .2em; font-weight: 700; }
+  header p.lead { color: var(--muted); margin: 0 auto 28px; max-width: 640px; }
+  .btn {
+    display: inline-block;
+    background: var(--accent-dark);
+    color: #fff;
+    border: 1px solid var(--accent);
+    padding: 12px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .btn:hover { background: #855c26; }
+  .ver { display: block; margin-top: 10px; color: var(--muted); font-size: .85rem; }
+  section { padding: 40px 0 8px; }
+  h2 {
+    font-size: 1.3rem;
+    border-left: 4px solid var(--accent);
+    padding-left: 12px;
+    margin: 0 0 18px;
+  }
+  .shots { display: grid; gap: 14px; grid-template-columns: 1fr 1fr; }
+  .shots figure { margin: 0; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+  .shots img { width: 100%; height: auto; display: block; }
+  .shots figcaption { padding: 8px 12px; color: var(--muted); font-size: .85rem; }
+  ul { padding-left: 1.3em; margin: 0; }
+  li { margin: .25em 0; }
+  ol.steps { padding-left: 1.4em; }
+  ol.steps li { margin: .6em 0; }
+  code {
+    background: #262a34;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 0 .35em;
+    font-family: Consolas, monospace;
+    font-size: .92em;
+    word-break: break-all;
+  }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 16px 20px; }
+  .note { border-color: #5a4a2a; }
+  .note strong { color: var(--warn); }
+  .muted { color: var(--muted); font-size: .9rem; }
+  table.lic { border-collapse: collapse; width: 100%; font-size: .9rem; }
+  table.lic td { border-top: 1px solid var(--line); padding: 4px 8px 4px 0; vertical-align: top; }
+  footer { border-top: 1px solid var(--line); margin-top: 48px; padding: 24px 0 40px; color: var(--muted); font-size: .85rem; }
+  a { color: var(--accent); }
+  @media (max-width: 640px) {
+    .shots { grid-template-columns: 1fr; }
+    header { padding: 40px 0 32px; }
+    table.lic td:last-child { word-break: break-all; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <p class="sub">UNOFFICIAL JAPANESE PATCH</p>
+    <h1>9th Dawn III 非公式日本語化パッチ</h1>
+    <p class="lead">Steam 版「9th Dawn III」のメニュー・アイテム・スキル・会話などを日本語で表示します。ゲームのファイルは書き換えず、ファイルを置くだけで導入できます。</p>
+    <a class="btn" href="https://github.com/higesho/9thDawnIII-jpfix/releases/latest">ダウンロード（最新版）</a>
+    <span class="ver">v0.1.0 ／ zip 約1.7MB（BepInEx 同梱）</span>
+  </div>
+</header>
+
+<main class="wrap">
+  <section>
+    <h2>スクリーンショット</h2>
+    <div class="shots">
+      <figure>
+        <img src="images/title.webp" width="800" height="450" alt="タイトルメニューが日本語で表示されている画面" loading="lazy">
+        <figcaption>タイトルメニュー</figcaption>
+      </figure>
+      <figure>
+        <img src="images/item.webp" width="800" height="450" alt="所持品とアイテムの説明が日本語で表示されている画面" loading="lazy">
+        <figcaption>所持品・アイテムの説明</figcaption>
+      </figure>
+      <figure>
+        <img src="images/skill.webp" width="800" height="450" alt="スキル画面が日本語で表示されている画面" loading="lazy">
+        <figcaption>スキル一覧</figcaption>
+      </figure>
+      <figure>
+        <img src="images/field.webp" width="800" height="450" alt="フィールドで地名と曜日が日本語で表示されている画面" loading="lazy">
+        <figcaption>フィールド（地名・曜日）</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>日本語化される範囲</h2>
+    <ul>
+      <li>タイトル、メニュー、設定画面、キャラクター作成</li>
+      <li>アイテム名と説明、装備・能力値・スキル・アビリティの画面</li>
+      <li>チュートリアル、宝箱や入手時のメッセージ</li>
+      <li>戦闘のメッセージ、敵の名前</li>
+      <li>NPC との会話、クエスト</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>導入方法</h2>
+    <ol class="steps">
+      <li><a href="https://github.com/higesho/9thDawnIII-jpfix/releases/latest">リリースページ</a>から zip をダウンロードして展開します。</li>
+      <li>Steam のライブラリで 9th Dawn III を右クリック →「管理」→「ローカルファイルを閲覧」で、ゲームフォルダ（<code>9th Dawn III Launcher.exe</code> と <code>GameBin</code> フォルダがあるフォルダ）を開きます。</li>
+      <li>zip の中の <code>GameBin</code> フォルダを、ゲームフォルダにそのままコピーします。「同じ名前のフォルダーがあります」と出たら統合してください（ゲーム本体のファイルは上書きされません）。<code>GameBin</code> の中に <code>winhttp.dll</code> と <code>BepInEx</code> フォルダが増えていれば正しく導入できています。</li>
+      <li>いつもどおり Steam からゲームを起動します（ランチャーあり・なし、どちらでも動きます）。</li>
+    </ol>
+    <p><strong>解除するには</strong> <code>GameBin</code> フォルダの <code>winhttp.dll</code> を削除してください。</p>
+    <p class="muted">すでに BepInEx 5 を入れて他の MOD を使っている場合は、<code>GameBin\BepInEx\plugins\9thDawnIII_JP</code> フォルダだけをコピーしてください。</p>
+  </section>
+
+  <section>
+    <h2>日本語にならないとき</h2>
+    <p>ゲームを一度起動したあと、次のファイルができているか確認してください。</p>
+    <ul>
+      <li><code>GameBin\BepInEx\LogOutput.log</code>（BepInEx のログ）</li>
+      <li><code>GameBin\BepInEx\plugins\9thDawnIII_JP\jpfix.log</code>（日本語化のログ）</li>
+    </ul>
+    <div class="card" style="margin-top:14px">
+      <p style="margin:0"><strong>LogOutput.log がない場合</strong>（BepInEx が動いていません）</p>
+      <ul>
+        <li><code>winhttp.dll</code> と <code>doorstop_config.ini</code> が <code>9th Dawn III.exe</code> と同じ <code>GameBin</code> フォルダにあるか確認してください。ランチャーがある一つ上のフォルダに置いても動きません。</li>
+        <li>ウイルス対策ソフトが <code>winhttp.dll</code> を削除・隔離していないか確認してください。</li>
+        <li>Steam Deck / Linux（Proton）では、ゲームのプロパティの起動オプションに <code>WINEDLLOVERRIDES="winhttp=n,b" %command%</code> を入力してください。</li>
+      </ul>
+      <p style="margin:.8em 0 0"><strong>jpfix.log がある場合</strong></p>
+      <ul>
+        <li><code>jpfix.log</code> と <code>LogOutput.log</code> を添えて <a href="https://github.com/higesho/9thDawnIII-jpfix/issues">Issues</a> でお知らせください。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>対応バージョン</h2>
+    <div class="card">
+      <p style="margin:0">Steam 版 9th Dawn III（Windows 版、Steam ビルドID 22484469）</p>
+      <p class="muted" style="margin:.6em 0 0">ゲーム本体のプログラムは書き換えず、文字を表示する処理だけを横取りする方式のため、ゲームが更新されても多くの場合はそのまま動きます。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>既知の問題</h2>
+    <ul>
+      <li>起動時のランチャーは英語のままです。</li>
+      <li>タイトルロゴなど、画像になっている文字は英語のままです。</li>
+      <li>まだ確認できていない場面（特に会話・お店・ミニゲーム）に、英語のまま残る文や、文のつながりが不自然な箇所がある可能性があります。</li>
+      <li>キャラクター名は英字で入力してください。</li>
+      <li>翻訳に不自然な箇所や誤訳が含まれる可能性があります。</li>
+    </ul>
+    <p class="muted">英語のまま残った文や誤訳を見つけたら、<a href="https://github.com/higesho/9thDawnIII-jpfix/issues">Issues</a> で教えてください。<code>GameBin\BepInEx\plugins\9thDawnIII_JP\config.ini</code> の <code>dump_untranslated=0</code> を <code>1</code> にすると、訳がなかった文が同じフォルダの <code>untranslated.txt</code> に記録されます。</p>
+  </section>
+
+  <section>
+    <h2>権利・免責</h2>
+    <div class="card note">
+      <ul>
+        <li>「9th Dawn III」の著作権は <strong>Valorware</strong> に帰属します。本パッチは非公式のもので、Valorware および Valve（Steam）とは関係ありません。本パッチについて Valorware へ問い合わせないでください。</li>
+        <li>本パッチはゲームのファイルを含まず、改変もしません。翻訳辞書は照合用のキーの大半に原文のハッシュ値を使っています。</li>
+        <li>本パッチの使用によって生じたいかなる損害についても、作者は責任を負いません。ご利用は自己責任でお願いします。</li>
+        <li>日本語フォントは「Noto Serif JP」（© 2017-2023 Adobe、SIL Open Font License 1.1）を、使う文字だけに絞り書体名を変えたものです。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>同梱ソフトウェア</h2>
+    <p>MOD ローダー BepInEx 5.4.23.6 の公式配布版（Windows x64）を改変せずに同梱しています。ライセンス全文は配布 zip 内の <code>licenses</code> フォルダにあります。</p>
+    <table class="lic">
+      <tr><td>BepInEx</td><td>LGPL-2.1</td><td><a href="https://github.com/BepInEx/BepInEx">github.com/BepInEx/BepInEx</a>（<a href="https://github.com/BepInEx/BepInEx/releases/tag/v5.4.23.6">v5.4.23.6</a>）</td></tr>
+      <tr><td>UnityDoorstop</td><td>LGPL-2.1</td><td><a href="https://github.com/NeighTools/UnityDoorstop">github.com/NeighTools/UnityDoorstop</a></td></tr>
+      <tr><td>HarmonyX</td><td>MIT</td><td><a href="https://github.com/BepInEx/HarmonyX">github.com/BepInEx/HarmonyX</a></td></tr>
+      <tr><td>MonoMod</td><td>MIT</td><td><a href="https://github.com/MonoMod/MonoMod">github.com/MonoMod/MonoMod</a></td></tr>
+      <tr><td>Mono.Cecil</td><td>MIT</td><td><a href="https://github.com/jbevain/cecil">github.com/jbevain/cecil</a></td></tr>
+    </table>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    9th Dawn III 非公式日本語化パッチ ／ <a href="https://github.com/higesho/9thDawnIII-jpfix">GitHub</a> ／ <a href="https://github.com/higesho/9thDawnIII-jpfix/issues">ご報告・ご要望</a> ／ <a href="https://higesho.github.io/9thDawnII-jpfix/">9th Dawn II 日本語化パッチ</a> ／ <a href="https://higesho.github.io/9thDawnClassic-jpfix/">9th Dawn Classic 日本語化パッチ</a>
+  </div>
+</footer>
+</body>
+</html>
